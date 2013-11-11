@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-CharitableApp::Application.config.secret_key_base = '916695c907e28995ac90e3580ceeffa8340deeba63cfba9053121338d17eca8f90bd9b106bbce457182017c2f7a13ff44a801435c05619e4273d5750111cd97a'
+CharitableApp::Application.config.secret_key_base = 'df00378c8ef42546dc30ae8ce86635ba73de652c85367fb3ce51e668b41248e0575092b884b00638b129bee506740103fa72df16d85e8ac1a07481f15c19bcea'
