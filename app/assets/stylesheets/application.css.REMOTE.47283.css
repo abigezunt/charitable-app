@@ -13,17 +13,12 @@
  */
 /**{
   font-family: 'Abel', sans-serif;
-  color: #17848E; 
+  color: #17848E  ; 
 }
 
 h1 {
-<<<<<<< HEAD
-text-align: center; 
-color: #17848E;
-=======
   text-align: center; 
   color: #17848E  ;
->>>>>>> 364dca2f8ae0bee4847693659a715256572e1255
 }
 
 input {
@@ -32,7 +27,7 @@ input {
   border: solid 1px;
   border-radius: 10px;
   background-color:white;
-  color: #17848E;
+  color: #17848E  ;
 }
 
 form {
@@ -41,13 +36,10 @@ form {
   vertical-align: bottom;
 }
 
-
+select {
+  
+}
 
 body {
-<<<<<<< HEAD
-  background-color: #48CDDB;
-}
-=======
   background: #48CDDB  ;
 }*/
->>>>>>> 364dca2f8ae0bee4847693659a715256572e1255
