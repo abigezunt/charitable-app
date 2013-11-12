@@ -5,3 +5,5 @@ class LocationsController < ApplicationController
 
 
 end
+
+#ben sucks
