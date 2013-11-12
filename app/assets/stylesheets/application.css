@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+<<<<<<< HEAD
  */
 *{
   font-family: 'Abel', sans-serif;
@@ -46,3 +47,5 @@ body {
   background-color: #48CDDB;
 }
 
+=======
+>>>>>>> 727040157484f281b0ddf0c91ba749f1e55df640
