@@ -13,12 +13,12 @@
  */
 *{
   font-family: 'Abel', sans-serif;
-  color: #17848E  ; 
+  color: #17848E; 
 }
 
 h1 {
 text-align: center; 
-color: #17848E  ;
+color: #17848E;
 }
 
 input {
@@ -27,7 +27,7 @@ input {
   border: solid 1px;
   border-radius: 10px;
   background-color:white;
-  color: #17848E  ;
+  color: #17848E;
 }
 
 form {
@@ -36,10 +36,8 @@ form {
   vertical-align: bottom;
 }
 
-select {
-  
-}
+
 
 body {
-  background: #48CDDB  ;
+  background-color: #48CDDB;
 }
