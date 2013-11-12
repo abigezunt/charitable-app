@@ -6,4 +6,4 @@ class LocationsController < ApplicationController
 
 end
 
-#ben sucks
+#ben really sucks
