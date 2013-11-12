@@ -26,7 +26,7 @@
             mapVar: AmCharts.maps.usaLow,
             getAreasFromMap:true, 
             centerMap: true, 
-            addListener(clickMapObject, show_data(this))
+            // addListener(clickMapObject, show_data(this))
 
             // images:[{latitude:40.3951, longitude:-73.5619, svgPath:icon, color:"#CC0000", scale:0.5, label:"New York", labelShiftY:2, title:"New York",description:"New York is the most populous city in the United States and the center of the New York Metropolitan Area, one of the most populous metropolitan areas in the world."}]     
             
@@ -43,9 +43,9 @@
             rollOverColor: "#2d4989",
             color: "#7b91c4",
             descriptionWindowHeight: 50,
-            descriptionWindowWidth: 100,
-            descriptionWindowX: 1000,
-            descriptionWindowY: 2000
+            // descriptionWindowWidth: 100,
+            // descriptionWindowX: 1000,
+            // descriptionWindowY: 2000
         };
     
         // let's say we want a small map to be displayed, so let's create it
