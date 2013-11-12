@@ -12,7 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
-//= require data_methods.js
+//= require us-map/raphael
+//= require us-map/jquery.usmap.js
+//= require locations
+//= require data
+//= require data_methods
+
+
 
    

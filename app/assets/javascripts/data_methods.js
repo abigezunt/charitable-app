@@ -7,7 +7,6 @@ var Charity = {
 
 Charity.seperate_data_arrays = function(big_array, key_array) {
   var i = 0; 
-  debugger;
   var max = big_array.length;
   for (; i<=max;){
     Charity.add_to_data_hash(key_array, big_array[i]);
@@ -32,11 +31,18 @@ Charity.add_to_data_hash = function(key_array, value_array){
 // entering any location and the data requested as the data_key and it will return requested data point
 Charity.show_data = function(location, data_key){
   return data[location][data_key]
+};
+
+Charity.retrieve_data = function(abbrev){
+  for(i in Charity.data){
+      if(Charity.data[prop].match_name === abbrev){
+       alert(prop);
+     }
+  }
 }
 
-
 Charity.seperate_data_arrays(states, state_us_keys)
-// Charity.seperate_data_arrays(counties, county_keys)
-// Charity.add_to_data_hash(usa, state_us_keys)
+Charity.seperate_data_arrays(counties, county_keys)
+Charity.add_to_data_hash(usa, state_us_keys)
 
 
