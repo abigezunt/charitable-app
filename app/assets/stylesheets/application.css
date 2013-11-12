@@ -11,14 +11,14 @@
  *= require_self
  *= require_tree .
  */
-*{
+/**{
   font-family: 'Abel', sans-serif;
   color: #17848E  ; 
 }
 
 h1 {
-text-align: center; 
-color: #17848E  ;
+  text-align: center; 
+  color: #17848E  ;
 }
 
 input {
@@ -42,4 +42,4 @@ select {
 
 body {
   background: #48CDDB  ;
-}
+}*/
