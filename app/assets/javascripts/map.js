@@ -42,7 +42,7 @@
             autoZoom: false,
             rollOverColor: "#2d4989",
             color: "#7b91c4",
-            descriptionWindowHeight: 50,
+            rollOverBorder: "#2d4989",
             // descriptionWindowWidth: 100,
             // descriptionWindowX: 1000,
             // descriptionWindowY: 2000
