@@ -9,6 +9,10 @@ $(document).ready(function(){
 	  	// .text('You clicked: '+ data.name)
 	  	.text(Charity.retrieve_data(data.name))
 	  	.parent().effect('highlight', {color: '#C7F464'}, 2000);
+	  	$('#data-'+date.name).show
+		}
+		mouseover: function(event, data){
+			$('')
 		}
 	});
 	Charity.create_divs();
