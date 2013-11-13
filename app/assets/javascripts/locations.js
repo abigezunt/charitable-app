@@ -1,22 +1,37 @@
 $(document).ready(function(){
 	
 	Charity.create_divs();
-	
+	Charity.create_ranks();
 	$('#map').hide();
+	$('#top').hide();
+	$('#average').hide();
+	$('#percent').hide();
 	
-	hide_divs();
+	Charity.hide_divs();
+
+	Charity.create_top_totals();
+
+	Charity.create_top_avg();
+
+	Charity.create_top_perc();
 
 	$('#submit-button').click(function(event) {
-		$('#map').slideDown(1500);
+		$('#map').show(1500);
+		$('#top').show();
+		$('#average').show();
+		$('#percent').show();
 		event.preventDefault();
 		var age = $( "#age" ).val();
 		var state = $( "#state" ).val();
-		show_local_div(age, state);
+		$('#'+state).show();
+		$('#rank-'+state).show();
+		$('#form').hide();
 });
 
 
 	$('#map').usmap({
 		'stateStyles': {fill: '#7b91c4'},
+		'stroke-width': 200,
 		'stateHoverStyles': {fill: '#452f8c'},
 
 	  click: function(event, data) {
@@ -26,9 +41,9 @@ $(document).ready(function(){
 		},
 
 		mouseover: function(event, data){
-			$('#local-div').hide();
-			hide_divs();
+			Charity.hide_divs();
 			$('#'+data.name).show();
+			$('#rank-'+data.name).show();
 		}
 	});
 

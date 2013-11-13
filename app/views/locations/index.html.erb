@@ -1,14 +1,57 @@
+<div id="navbar">
+  <div id="logo"></div>
+  <div id="compare"><a href="#map"></a></div>
+  <div id="rank"><a href="#top"></a></div>
+  <div id="give"><a href="#charities"></a></div>
+</div>
 
 <div id="clicked-state"></div>
-<div id="data-div"></div>
-<div id="local-div"></div>
+
+<div id="sidebar">
+  <div id="data-div"></div>
+  <div id="local-div"></div>
+</div>
 
 <div id="map" style="width: 700px; height: 500px;"></div>
 
+<div id="graphs"></div>
 
-  <form action="">
-   <input id="age" type="text" name="age" placeholder="Age"><br>
-   <input id="state" type="text" name="state" placeholder="State Initials">
+<div id="top">
+  <div id="total">
+    <h2>Top State-Wide Contributions</h2>
+    <ol id="total-list">
+      <li id="total-1"></li>
+      <li id="total-2"></li>
+      <li id="total-3"></li>      
+      <li id="total-4"></li>
+      <li id="total-5"></li>
+    </ol>
+  </div>
+  <div id="average">
+    <h2>Top Contributions by Average Household</h2>
+    <ol id="average-list">
+      <li id="average-1"></li>
+      <li id="average-2"></li>
+      <li id="average-3"></li>      
+      <li id="average-4"></li>
+      <li id="average-5"></li>
+    </ul>
+  </div>
+  <div id="percent">
+    <h2>Top Contributions by Percent of Income</h2>
+    <ol id="percent-list">
+      <li id="percent-1"></li>
+      <li id="percent-2"></li>
+      <li id="percent-3"></li>      
+      <li id="percent-4"></li>
+      <li id="percent-5"></li>
+    </ol>
+  </div>
+</div>
+  
+<form id="form" action="">
+ <input id="age" type="text" name="age" placeholder="Age"><br>
+ <input id="state" type="text" name="state" placeholder="State Initials">
 
   <div>Income Level: <select id="income">
     <option value="b4">50,000 - 99,999</option>
@@ -16,7 +59,7 @@
     <option value="b7">200,000 & Up</option>
     </select>
   </div>
-  
+
   <div>Race: <select id="race">
     <option value="race0">White</option>
     <option value="race1">Black</option>
@@ -25,7 +68,7 @@
     <option value="race4">Other</option>
     </select>
   </div>
-  
+
   <div>Education: <select id="education">
     <option value="edu0">No High School Diploma</option>
     <option value="edu1">High School Diploma</option>
@@ -36,6 +79,7 @@
   </div>
   <input id="submit-button" type="submit" value="Submit">
 </form>
+
 
 
 

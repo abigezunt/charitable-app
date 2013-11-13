@@ -42,22 +42,122 @@ Charity.retrieve_data = function(abbrev){
 
 Charity.create_divs = function(){
   for(var i in Charity.data){
-    $("#data-div").append("<div id=\'"+Charity.data[i].match_name+"\'>"+"<h3>"+Charity.data[i].display_name+"</h3>"+"<h4>State's Total Charitable Contributions:</h4>"+"$"+parseInt(Charity.data[i].tot_contrib).formatMoney(0)+"<h4>Average Household Contribution:</h4>"+"$"+parseInt(Charity.data[i].em_contrib).formatMoney(0)+"<h4>Average Percent Household Income:</h4>"+Charity.data[i].pctgiv+"</div>");
+    $("#data-div").append("<div id=\'"+Charity.data[i].match_name+"\'>"+"<h3>"+Charity.data[i].display_name+"</h3>"+"<h4>State's Total Charitable Contributions:</h4>"+"$"+parseInt(Charity.data[i].tot_contrib).formatMoney(0)+"<h4>Avg Household Contribution:</h4>"+"$"+parseInt(Charity.data[i].em_contrib).formatMoney(0)+"<h4>Avg Percent Household Income:</h4>"+Charity.data[i].pctgiv+"</div>");
   }
 };
 
-var hide_divs = function(){
+Charity.hide_divs = function(){
   for(var i in Charity.data){
     $('#'+i).hide()
   }
+  for(var i in Charity.data){
+  $('#rank-'+i).hide()
+  }
 };
 
-var show_local_div = function(age, state){
-  var pctRank = Charity.data[state].rank_pctgiv.split("|");
-  var contrRank = Charity.data[state].rank_em_contrib.split("|");
+Charity.create_ranks = function(){
+  for(var i in Charity.data){
+    var pctRank = Charity.data[i].rank_pctgiv.split("|");
+    var contrRank = Charity.data[i].rank_em_contrib.split("|");
+    $("#local-div").append("<div id=\'rank-"+Charity.data[i].match_name+"\'>"+"<h3>"+Charity.data[i].display_name+"</h3>"+"<h4>Average Household Contribution:</h4>"+"#"+contrRank[0]+"<h4>Average Percent Household Income:</h4>"+"#"+pctRank[0]+"</div>");
+  }
+};
 
-  $("#local-div").html("<h2>How charitable is your state living?</h2>"+"<h3>"+Charity.data[state].display_name+"</h3>"+"<h4>Average Household Contribution:</h4>"+"#"+contrRank[0]+"<h4>Average Percent Household Income:</h4>"+"#"+pctRank[0]+"</div>");
-}
+Charity.create_top_totals = function(){
+  var tot_hash = {};
+  for(var i in Charity.data){
+    if (parseInt(Charity.data[i].rank_tot_contrib) <=5){
+      tot_hash[Charity.data[i].match_name]=Charity.data[i].rank_tot_contrib;
+    }
+  }
+  Charity.top_totals_list(tot_hash);
+};
+
+Charity.top_totals_list = function(tot_hash){
+  for(var i in tot_hash){
+    switch (Charity.data[i].rank_tot_contrib){
+      case "1|51":
+        $('#total-1').html("<h2>" + Charity.data[i].display_name + ": $" + parseInt(Charity.data[i].tot_contrib).formatMoney(0))
+        break;
+      case "2|51":
+        $('#total-2').html("<h2>" + Charity.data[i].display_name + ": $" + parseInt(Charity.data[i].tot_contrib).formatMoney(0))
+        break;
+      case "3|51":
+        $('#total-3').html("<h2>" + Charity.data[i].display_name + ": $" + parseInt(Charity.data[i].tot_contrib).formatMoney(0))
+        break;
+      case "4|51":
+        $('#total-4').html("<h2>" + Charity.data[i].display_name + ": $" + parseInt(Charity.data[i].tot_contrib).formatMoney(0))
+        break;
+      case "5|51":
+        $('#total-5').html("<h2>" + Charity.data[i].display_name + ": $" + parseInt(Charity.data[i].tot_contrib).formatMoney(0))
+        break;
+    }
+  }
+};
+
+Charity.create_top_avg = function(){
+  var tot_hash = {};
+  for(var i in Charity.data){
+    if (parseInt(Charity.data[i].rank_em_contrib) <=5){
+      tot_hash[Charity.data[i].match_name]=Charity.data[i].rank_em_contrib;
+    }
+  }
+  Charity.top_avg_list(tot_hash);
+};
+
+Charity.top_avg_list = function(tot_hash){
+  for(var i in tot_hash){
+    switch (Charity.data[i].rank_em_contrib){
+      case "1|51":
+        $('#average-1').html("<h2>" + Charity.data[i].display_name + ": $" + parseInt(Charity.data[i].em_contrib).formatMoney(0))
+        break;
+      case "2|51":
+        $('#average-2').html("<h2>" + Charity.data[i].display_name + ": $" + parseInt(Charity.data[i].em_contrib).formatMoney(0))
+        break;
+      case "3|51":
+        $('#average-3').html("<h2>" + Charity.data[i].display_name + ": $" + parseInt(Charity.data[i].em_contrib).formatMoney(0))
+        break;
+      case "4|51":
+        $('#average-4').html("<h2>" + Charity.data[i].display_name + ": $" + parseInt(Charity.data[i].em_contrib).formatMoney(0))
+        break;
+      case "5|51":
+        $('#average-5').html("<h2>" + Charity.data[i].display_name + ": $" + parseInt(Charity.data[i].em_contrib).formatMoney(0))
+        break;
+    }
+  }
+};
+
+Charity.create_top_perc = function(){
+  var tot_hash = {};
+  for(var i in Charity.data){
+    if (parseInt(Charity.data[i].rank_pctgiv) <=5){
+      tot_hash[Charity.data[i].match_name]=Charity.data[i].rank_pctgiv;
+    }
+  }
+  Charity.top_perc_list(tot_hash);
+};
+
+Charity.top_perc_list = function(tot_hash){
+  for(var i in tot_hash){
+    switch (Charity.data[i].rank_pctgiv){
+      case "1|51":
+        $('#percent-1').html("<h2>" + Charity.data[i].display_name + ": " + Charity.data[i].pctgiv)
+        break;
+      case "2|51":
+        $('#percent-2').html("<h2>" + Charity.data[i].display_name + ": " + Charity.data[i].pctgiv)
+        break;
+      case "3|51":
+        $('#percent-3').html("<h2>" + Charity.data[i].display_name + ": " + Charity.data[i].pctgiv)
+        break;
+      case "4|51":
+        $('#percent-4').html("<h2>" + Charity.data[i].display_name + ": " + Charity.data[i].pctgiv)
+        break;
+      case "5|51":
+        $('#percent-5').html("<h2>" + Charity.data[i].display_name + ": " + Charity.data[i].pctgiv)
+        break;
+    }
+  }
+};
 
 Number.prototype.formatMoney = function(c, d, t){
 var n = this, 
