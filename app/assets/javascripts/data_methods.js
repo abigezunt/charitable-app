@@ -51,7 +51,14 @@ var hide_divs = function(){
     $('#'+i).hide()
   }
 };
-  
+
+var show_local_div = function(age, state){
+  var pctRank = Charity.data[state].rank_pctgiv.split("|");
+  var contrRank = Charity.data[state].rank_em_contrib.split("|");
+
+  $("#local-div").html("<h2>How charitable is your state living?</h2>"+"<h3>"+Charity.data[state].display_name+"</h3>"+"<h4>Average Household Contribution:</h4>"+"#"+contrRank[0]+"<h4>Average Percent Household Income:</h4>"+"#"+pctRank[0]+"</div>");
+}
+
 Number.prototype.formatMoney = function(c, d, t){
 var n = this, 
     c = isNaN(c = Math.abs(c)) ? 2 : c, 
