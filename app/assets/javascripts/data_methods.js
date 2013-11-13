@@ -23,7 +23,7 @@ Charity.add_to_data_hash = function(key_array, value_array){
     temp_data[key_array[i]] = value_array[i];
     i = i + 1;
   }
-  Charity.data[temp_data["display_name"]] = temp_data;
+  Charity.data[temp_data["match_name"]] = temp_data;
 };
 
 // scope of data must be looked at
@@ -46,6 +46,12 @@ Charity.create_divs = function(){
   }
 };
 
+var hide_divs = function(){
+  for(var i in Charity.data){
+    $('#'+i).hide()
+  }
+};
+  
 Number.prototype.formatMoney = function(c, d, t){
 var n = this, 
     c = isNaN(c = Math.abs(c)) ? 2 : c, 

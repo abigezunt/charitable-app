@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#map').hide();
+	// $('#map').hide();
 	}); 
 
 $('#submit').mouseover(function(event) {
