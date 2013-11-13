@@ -17,7 +17,6 @@
 //= require locations
 //= require data
 //= require data_methods
-
-
+//= require main
 
    
