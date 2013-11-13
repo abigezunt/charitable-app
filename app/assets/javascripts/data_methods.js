@@ -2,7 +2,6 @@
 var Charity = {
   data: {}
 };
-
 // send states and counties through this so that it will send each individual county and individual state to the add_to_data_hash method
 
 Charity.seperate_data_arrays = function(big_array, key_array) {
@@ -35,14 +34,25 @@ Charity.show_data = function(location, data_key){
 
 Charity.retrieve_data = function(abbrev){
   for(i in Charity.data){
-      if(Charity.data[prop].match_name === abbrev){
-       alert(prop);
+      if(Charity.data[i].match_name === abbrev){
+        return Charity.data[i].display_name;
      }
   }
+};
+
+Charity.create_divs = function(){
+
+  var i = 0;
+  var max = Charity.data.length;
+  for (; i <= max;){
+    $("#clicked-state").html += "<div id='"+Charity.data[i].match_name+"'>"+"<h3>"+Charity.data[i].display_name+"</h3></div>";
+    i = i + 1;
+  }
+
 }
+
 
 Charity.seperate_data_arrays(states, state_us_keys)
 Charity.seperate_data_arrays(counties, county_keys)
 Charity.add_to_data_hash(usa, state_us_keys)
-
-
+Charity.create_divs()
