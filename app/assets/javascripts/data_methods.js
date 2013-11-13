@@ -23,7 +23,7 @@ Charity.add_to_data_hash = function(key_array, value_array){
     temp_data[key_array[i]] = value_array[i];
     i = i + 1;
   }
-  Charity.data[temp_data["display_name"]] = temp_data;
+  Charity.data[temp_data["match_name"]] = temp_data;
 };
 
 // scope of data must be looked at
@@ -45,6 +45,19 @@ Charity.create_divs = function(){
     $("#data-div").append("<div id=\'"+Charity.data[i].match_name+"\'>"+"<h3>"+Charity.data[i].display_name+"</h3>"+"<h4>State's Total Charitable Contributions:</h4>"+"$"+parseInt(Charity.data[i].tot_contrib).formatMoney(0)+"<h4>Average Household Contribution:</h4>"+"$"+parseInt(Charity.data[i].em_contrib).formatMoney(0)+"<h4>Average Percent Household Income:</h4>"+Charity.data[i].pctgiv+"</div>");
   }
 };
+
+var hide_divs = function(){
+  for(var i in Charity.data){
+    $('#'+i).hide()
+  }
+};
+
+var show_local_div = function(age, state){
+  var pctRank = Charity.data[state].rank_pctgiv.split("|");
+  var contrRank = Charity.data[state].rank_em_contrib.split("|");
+
+  $("#local-div").html("<h2>How charitable is your state living?</h2>"+"<h3>"+Charity.data[state].display_name+"</h3>"+"<h4>Average Household Contribution:</h4>"+"#"+contrRank[0]+"<h4>Average Percent Household Income:</h4>"+"#"+pctRank[0]+"</div>");
+}
 
 Number.prototype.formatMoney = function(c, d, t){
 var n = this, 
