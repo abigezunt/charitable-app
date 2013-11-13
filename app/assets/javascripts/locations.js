@@ -3,6 +3,7 @@ $(document).ready(function(){
 	Charity.create_divs();
 	
 	$('#map').hide();
+	
 	hide_divs();
 
 	$('#submit-button').click(function(event) {
